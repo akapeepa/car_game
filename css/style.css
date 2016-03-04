@@ -1,0 +1,26 @@
+body {
+  background-color: #34495e; }
+  body #game {
+    height: 100vmin;
+    width: 50vmin;
+    margin: 0 auto;
+    background-color: #bdc3c7;
+    position: relative;
+    overflow: hidden; }
+    body #game #score {
+      position: absolute;
+      font-size: 6vmin;
+      color: black; }
+    body #game img#p1 {
+      bottom: 0;
+      right: 20vmin;
+      position: absolute;
+      width: 10vmin;
+      height: 20vh;
+      transition: left 0.1s ease-in; }
+    body #game img#p2 {
+      top: -10vmin;
+      width: 10vmin;
+      position: absolute; }
+
+/*# sourceMappingURL=style.css.map */
