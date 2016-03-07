@@ -5,7 +5,8 @@ $(document).ready(function() {
   var enemy_x = 10*Math.floor(5*Math.random());
   enemy_car.css("left", enemy_x + "vmin");
   var bottom = 0; // my car position y axis;
-  var position = 20; //my car position x axis;
+  var position = 0; //my car position x axis;
+  var score = 0;
   $(document).bind('keyup', 'right', function() {
     if(position < 40) {
       position += 10;//incrementing x axis;
@@ -24,6 +25,7 @@ $(document).ready(function() {
       my_car.css('bottom', bottom + "vmin");
     }
   })
+
   $(document).bind('keyup', 'down', function() {
     if(bottom > 0 ){
       bottom -= 10; //incrementing y axis
@@ -31,18 +33,23 @@ $(document).ready(function() {
     }
   })
 
-  setInterval(function()
+  var a = setInterval(function()
   {
     if (enemy_position < 100) {
+      if(enemy_position > 60 && enemy_x == position){
+        clearInterval(a); //clearInterval takes an variable thats why we created a var a ; to sto the car on collision.
+      }
+      score++;
+      $("#score").html(Math.floor(score));
       enemy_position += 1;
       enemy_car.css("top", enemy_position +"vmin");
+
     } else {
-      enemy_position = -10;
-      var random = 10*Math.floor(5*Math.random());
-      enemy_car.css("left", random + "vmin");
+      enemy_position = -20;
+      enemy_x = 10*Math.floor(5*Math.random());
+      enemy_car.css("left", enemy_x + "vmin");
     }
   }, 30);
-
 
 
 });
