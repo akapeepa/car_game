@@ -43,13 +43,10 @@ $(document).ready(function() {
       $("#score").html(Math.floor(score));
       enemy_position += 1;
       enemy_car.css("top", enemy_position +"vmin");
-
     } else {
       enemy_position = -20;
       enemy_x = 10*Math.floor(5*Math.random());
       enemy_car.css("left", enemy_x + "vmin");
     }
   }, 30);
-
-
 });
