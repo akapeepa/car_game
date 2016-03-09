@@ -36,6 +36,11 @@ $(document).ready(function() {
   var a = setInterval(function()
   {
     if (enemy_position < 100) {
+      // Get the top position of your car
+      // Get the top position of enemy car
+      // Add the height of enemy car to the top position and check if its
+      // equal to your car's top position
+      // If its equal, you have a collision
       if(enemy_position > 60 && enemy_x == position){
         clearInterval(a); //clearInterval takes an variable thats why we created a var a ; to sto the car on collision.
       }
